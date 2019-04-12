@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<html lang="en">
+      <head>
+          <meta charset="utf-8">
+          <title>RealTime Dashboard</title>
+          <!-- Bootstrap CSS File -->
+          <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+          <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0/dist/Chart.min.js">
+          </script>
+          <script src="https://code.jquery.com/jquery-3.3.1.js"
+         integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+         crossorigin="anonymous"></script>
+          <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2019.1.220/styles/kendo.common.min.css">
+          <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2019.1.220/styles/kendo.rtl.min.css">
+          <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2019.1.220/styles/kendo.default.min.css">
+          <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2019.1.220/styles/kendo.mobile.all.min.css">
+          <link rel="stylesheet" href="/css/chart.css">
+          <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="crossorigin="anonymous"> </script>
+         <script src="https://kendo.cdn.telerik.com/2019.1.220/js/kendo.all.min.js"></script>
+         <script src="js/charts.js"></script>
+      </head>
+      <body>
+         <div class="container">
+           <canvas id="myChart" width="100" height="50"></canvas>
+           
+           <div class="buttons">
+             <button class="btn btn-primary k-primary" id="rButton" onclick="vote('react')">Vote React</button>
+             <button class="btn btn-primary k-primary" id="jButton" onclick="vote('jquery')">Vote jQuery</button>
+           </div>
+         </div>
+     
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js"></script>
+        <script>
+          $(document).ready(function () {
+             $("#rButton").kendoButton();
+             $("#jButton").kendoButton();
+          })
+          let socket = io('http://localhost');
+          socket.on('connect', function(){});
+          socket.on('event', function(data){});
+          socket.on('disconnect', function(){});
+        </script>
+    </body> 
+</html>
+	   
